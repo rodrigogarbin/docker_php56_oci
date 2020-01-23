@@ -1,0 +1,19 @@
+version: '3'
+services:
+  proxy:
+    build: ./
+    networks:
+      - rede_docker
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./conf:/etc/nginx/conf.d/
+      - ./log/:/var/log/nginx/
+      - ./ssl/:/etc/nginx/ssl/
+    networks:
+      - rede_docker
+
+networks:
+  rede_docker:
+    external: true

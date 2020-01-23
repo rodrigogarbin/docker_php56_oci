@@ -1,0 +1,19 @@
+version: '3'
+volumes:
+  data:
+services:
+  www-apache:
+    container_name: portal-www-apache
+    build:
+      context: ../web
+    restart: always
+    expose:
+      - "80"
+    volumes:
+      - ../:/var/www/
+    networks:
+      - rede_docker
+
+networks:
+  rede_docker:
+    external: true
