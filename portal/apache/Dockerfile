@@ -11,8 +11,8 @@ ENV OCI_VERSION=12
     # Install Oracle Instantclient
     RUN mkdir /opt/oracle 
     RUN cd /opt/oracle \
-        && wget https://github.com/diogomascarenha/oracle-instantclient/raw/master/instantclient-basic-linux.x64-12.1.0.2.0.zip \
-        && wget https://github.com/diogomascarenha/oracle-instantclient/raw/master/instantclient-sdk-linux.x64-12.1.0.2.0.zip \
+        && wget https://github.com/rodrigogarbin/docker_proxy/blob/master/portal/apache/files/instantclient-basic-linux.x64-12.1.0.2.0.zip \
+        && wget https://github.com/rodrigogarbin/docker_proxy/blob/master/portal/apache/files/instantclient-sdk-linux.x64-12.1.0.2.0.zip \
         && unzip /opt/oracle/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /opt/oracle \
         && unzip /opt/oracle/instantclient-sdk-linux.x64-12.1.0.2.0.zip -d /opt/oracle \
         && ln -s /opt/oracle/instantclient_12_1/libclntsh.so.12.1 /opt/oracle/instantclient_12_1/libclntsh.so \
