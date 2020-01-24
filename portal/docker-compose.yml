@@ -5,12 +5,15 @@ services:
   www-apache:
     container_name: portal-www-apache
     build:
-      context: ../web
+      context: ./apache
     restart: always
     expose:
       - "80"
     volumes:
-      - ../:/var/www/
+      - ./www:/var/www/
+      - ./apache/conf:/etc/apache2/sites-available/
+      - ./ssl:/etc/apache2/ssl/
+      - ./apache/files:/opt/oracle/
     networks:
       - rede_docker
 

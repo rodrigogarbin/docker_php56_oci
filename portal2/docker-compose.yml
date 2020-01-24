@@ -5,7 +5,7 @@ services:
     container_name: portal2-www-nginx
     image: nginx:stable-alpine
     volumes:
-      - ./www/portal:/var/www/
+      - ./www:/var/www/
       - ./default.conf:/etc/nginx/conf.d/default.conf
       - ./ssl/:/etc/nginx/ssl/
       - ./log/:/var/log/nginx/
@@ -21,7 +21,7 @@ services:
     build:
       context: php-fpm
     volumes:
-      - ./www/portal:/var/www/
+      - ./www:/var/www/
       - ./php-fpm/php.ini:/usr/local/etc/php/php.ini
     networks:
       - rede_docker
